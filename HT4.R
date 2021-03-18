@@ -1,6 +1,6 @@
 
 
-setwd("C:/Users/LENOVO/Desktop/Clases/Minería de datos/Github/HT3.Arboles_de_decision")
+setwd("C:/Users/LENOVO/Desktop/Clases/Minería de datos/Github/HT4-Mineria-de-Datos")
 datatest <- read.csv("house-prices-advanced-regression-techniques/test.csv")
 datatrain <- read.csv("house-prices-advanced-regression-techniques/train.csv")
 
@@ -19,4 +19,4 @@ cdata <- bind_rows(cdatatest,cdatatrain)
 cuantitativas_precios<-merge(x = cdata, y = prices, by = "Id")
 cuantitativas_precios <-  na.omit(cuantitativas_precios)
 
-write.csv(cuantitativas_precios,"C:/Users/LENOVO/Desktop/Clases/Minería de datos/cuantitativas_precios.csv")
+write.csv(cuantitativas_precios,"C:/Users/LENOVO/Desktop/Clases/Minería de datos/Github/HT4-Mineria-de-Datos/cuantitativas_precios.csv")
