@@ -1,8 +1,9 @@
-setwd("C:/Users/Kevin Macario/Desktop/Uvg/9no Semestre/Mineria de Datos/HT4-Mineria-de-Datos")
-#setwd("C:/Users/LENOVO/Desktop/Clases/Minería de datos/Github/HT4-Mineria-de-Datos")
+#setwd("C:/Users/Kevin Macario/Desktop/Uvg/9no Semestre/Mineria de Datos/HT4-Mineria-de-Datos")
+setwd("C:/Users/LENOVO/Desktop/Clases/Minería de datos/Github/HT4-Mineria-de-Datos")
 datatest <- read.csv("house-prices-advanced-regression-techniques/test.csv")
 datatrain <- read.csv("house-prices-advanced-regression-techniques/train.csv")
 library(dplyr)
+library(ModelMetrics)
 prices <- read.csv("house-prices-advanced-regression-techniques/sample_submission.csv")
 
 set.seed(666)
@@ -42,7 +43,11 @@ resultadosTrain<-data.frame(predModel)
 #residuales train
 residuales <- train$SalePrice-predModel
 hist(residuales, main="Distribucion de error de Residuales")
-
+### MSE 
+rmse(test$SalePrice,predModel)
+###
+plot(test$SalePrice,predModel)
+### 
 cfm<-confusionMatrix(test,predModel)
 cfm
 
@@ -56,3 +61,9 @@ resultadosTrain<-data.frame(predModel)
 #residuales train
 residuales <- train$SalePrice-predModel
 hist(residuales, main="Distribucion de error de Residuales")
+
+### MSE 
+rmse(test$SalePrice,predModel)
+###
+plot(test$SalePrice,predModel)
+### 
